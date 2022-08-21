@@ -1,0 +1,148 @@
+<!DOCTYPE html>e
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisho-Slider</title>
+    <link rel="stylesheet" href="bisho.css">
+</head>
+<body>
+    <!-- BISHWJIT SLIDER MAKER STATR -->
+     <div class="slide-container"> 
+
+        <div class="slide"> 
+            <img src="slide-1.jpg" alt="">
+            <div class="caption">First Image</div>
+        </div>
+ 
+        <div class="slide"> 
+            <img src="slide-2.jpg" alt="">
+            <div class="caption">Two Image</div>
+        </div>
+
+        <div class="slide"> 
+            <img src="slide-3.jpg" alt="">
+            <div class="caption">Three Image</div>
+        </div>
+
+        <div class="slide"> 
+            <img src="slide-2.jpg" alt="">
+            <div class="caption">Four Image</div>
+        </div> 
+
+        <span class=" arrow prev" onclick="controller(-1)">&#10094</span>
+        <span class=" arrow next" onclick="controller(1)">&#10095</span>
+        
+
+ </div>
+
+
+ <section class="autoslider"> 
+    <h1>Automatic Slideshow</h1>
+<h3>Change image every 2 seconds:</h3>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="slide-1.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="slide-2.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="slide-3.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+ </section>    
+   
+  <!-- BISHOWAJIT SLIDER MAKER ENDS -->
+
+ 
+ 
+e
+
+
+
+<script> 
+  let flag = 0;
+  showSlide(flag);
+  function controller(x) {
+    flag = flag+x;
+    showSlide(flag);
+    
+  }
+  function showSlide(num) {
+     let slides = document.getElementsByClassName("slide");
+   
+     if (num ==slides.length) {
+        flag=0;
+        num=0;
+     }
+     if (num<0) {
+        flag=slides.length-1;
+        num=slides.length-1;
+     }
+     for (let y of slides) {
+        y.style.display= "none";
+     
+     }
+     slides[num].style.display = "block";
+
+     
+  }
+
+// my auto slide
+  let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex == slides.length) {slideIndex = 0}    
+ 
+  slides[slideIndex].style.display = "block";  
+  
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+
+// mitchell slider
+
+ 
+ function shala() {
+    let kaku = document.getElementsByClassName("lide");
+    let monti=0
+    setInterval( function() {
+        monti +=1
+        if (monti === kaku.length) {
+            monti = 0
+        }
+    }, 2000); 
+ }
+ shala('kaku')
+</script>
+  
+</body>
+</html>
